@@ -421,6 +421,7 @@ dependencies = [
  "deno_error",
  "env",
  "reqwest",
+ "serde",
  "tokio",
 ]
 
