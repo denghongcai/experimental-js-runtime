@@ -10,3 +10,4 @@ env = "1.0.1"
 reqwest = "0.12.15"
 tokio = { version = "1.44.1", features = ["full"] }
 serde = { version = "1.0", features = ["derive"] }
+md5 = "0.7.0"
