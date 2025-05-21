@@ -18,4 +18,4 @@ globalThis.ejsr.fetch = async (url) => {
   return globalThis.fetch(url);
 };
 
-globalThis.crypto = crypto;
+globalThis.ejsr.crypto = crypto;
