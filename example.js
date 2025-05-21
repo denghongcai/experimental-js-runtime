@@ -59,3 +59,36 @@ try {
 // 等待所有异步操作完成
 await new Promise((resolve) => setTimeout(resolve, 500));
 console.log('\n=== 运行时测试结束 ===');
+
+// Test crypto module
+try {
+  const text = "hello world";
+  const expectedHash = "5eb63bbbe01eeed093cb22bb8f5acdc3"; // Known MD5 hash for "hello world"
+  const actualHash = crypto.md5(text);
+
+  console.log("MD5 Test:");
+  console.log("Input:", text);
+  console.log("Expected Hash:", expectedHash);
+  console.log("Actual Hash:", actualHash);
+
+  if (actualHash === expectedHash) {
+    console.log("MD5 Test Passed!");
+  } else {
+    console.error("MD5 Test Failed!");
+  }
+} catch (e) {
+  console.error("Error during MD5 test:", e.message, e.stack);
+}
+
+// It might be good to add a test for non-string input to see if the TypeError is thrown
+try {
+  console.log("MD5 Test (non-string input):");
+  crypto.md5(12345); // Should throw an error
+} catch (e) {
+  console.log("Caught expected error for non-string input:", e.message);
+  if (e instanceof TypeError) {
+    console.log("Non-string input test passed (TypeError thrown)!");
+  } else {
+    console.error("Non-string input test failed (wrong error type)!");
+  }
+}

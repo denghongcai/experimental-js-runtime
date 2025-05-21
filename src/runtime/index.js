@@ -4,6 +4,7 @@ import { initConsole } from './modules/console.js';
 import { initFetch } from './modules/fetch.js';
 import { initFS } from './modules/fs.js';
 import { initTimer } from './modules/timer.js';
+import * as crypto from './modules/crypto.js';
 
 // 初始化所有模块
 initConsole(); // 初始化控制台功能
@@ -16,3 +17,5 @@ globalThis.ejsr = globalThis.ejsr || {};
 globalThis.ejsr.fetch = async (url) => {
   return globalThis.fetch(url);
 };
+
+globalThis.crypto = crypto;

@@ -60,6 +60,7 @@ impl ModuleLoader for EJSRModuleLoader {
                     "modules/fetch.js" => include_str!("runtime/modules/fetch.js"),
                     "modules/fs.js" => include_str!("runtime/modules/fs.js"),
                     "modules/timer.js" => include_str!("runtime/modules/timer.js"),
+                    "modules/crypto.js" => include_str!("runtime/modules/crypto.js"),
                     _ => {
                         return Err(ModuleLoaderError::from(io::Error::new(
                             io::ErrorKind::NotFound,
